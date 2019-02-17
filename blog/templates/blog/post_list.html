@@ -4,9 +4,13 @@
 </head>
 <body>
 	<h3><a href="/"> This is my Blog </a></h3>
-	<h3><a href="">Random Link</a></h3>
-	<p> Random sentence , a lazy brown fox jumps over a fence.</p><br>
-	<h3> <a href="">Random Link2</a></h3>
-	<p> Random sentence , a lazy brown fox jumps over a fence.</p><br>
+	{% for post in posts %}
+	<div> 
+		<h3><a href="">{{post.title}}</a></h3>
+		<p> By {{post.author}}</p>
+		<p> {{post.text|linebreaksbr}}</p>
+		<br>
+	</div>
+	{% endfor %}
 </body>
 </html>
